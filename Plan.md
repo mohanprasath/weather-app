@@ -72,3 +72,24 @@
 ### Report - cycle 4
 
 - ALL DONE
+
+## Cycle 5
+
+1. Make UI Cleaner and Nicer
+2. Handle Error Messages
+3. Planned duration - 60 min
+
+### Notes - cycle 5
+
+- UI needs to be clearly spaced, text size should be better, Information about text should be provided
+- error message display needs to be revamped
+- Handled keyboard auto dismiss issue
+- TODO Network Status check
+- TODO ERROR if user haven't entered any city name - DONE
+- TODO PICKER for C/F
+- TODO Nav bar
+    - npm install react-native-navbar --save
+
+### Report - cycle 5
+
+- ALL DONE

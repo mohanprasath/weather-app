@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import SearchCity from "./components/SearchCity";
 import WeatherInformation from "./components/WeatherInformation";
 import env from "./env";
+import NavigationBar from "react-native-navbar";
 
 const axios = require("axios");
 
@@ -14,6 +15,9 @@ export default function App() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [temperature, setTemperature] = useState("");
   const [unitSystem, setUnitSystem] = useState("metric");
+  const APP_NAME = "WEATHER INFO";
+
+  console.disableYellowBox = true;
 
   useEffect(() => {
     load();
@@ -21,21 +25,20 @@ export default function App() {
   }, []);
 
   function load() {
-    console.log(
-      cityName,
-      `${API_URL}q=${cityName}&units=${unitSystem}&appid=${env.WEATHER_API_KEY}`
-    );
-
     axios
       .get(
         `${API_URL}q=${cityName}&units=${unitSystem}&appid=${env.WEATHER_API_KEY}`
       )
       .then(function (response) {
         // handle success
+        setErrorMessage("Loading Weather Data...");
         setWeatherResponseData(response.data);
+        setErrorMessage(null);
+        setCityName("");
       })
       .catch(function (error) {
         // handle error
+        setWeatherResponseData(null);
         console.log(error);
         setErrorMessage(error);
       })
@@ -46,11 +49,13 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <NavigationBar title={APP_NAME} />
       <SearchCity cityName={cityName} load={load} setCityName={setCityName} />
       <WeatherInformation
         style={styles.weatherInfo}
         weatherResponseData={weatherResponseData}
         unitSystem={unitSystem}
+        errorMessage={errorMessage}
       />
       <StatusBar style="auto" />
     </View>
