@@ -53,4 +53,22 @@
 
 ### Report - cycle 3
 
-- DONE
+- ALL DONE
+
+## Cycle 4
+
+1. Display the following:
+   1. weather info with images
+   2. descriptions of the weather cituration
+   3. current city being displayed
+2. Move all the above to a new component
+3. Check if the display is better and looks clean
+4. Planned duration - 60 min
+
+### Notes - cycle 4
+
+- move the displays to a new component
+
+### Report - cycle 4
+
+- ALL DONE

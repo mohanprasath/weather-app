@@ -7,11 +7,12 @@ export default function SearchCity({ cityName, load, setCityName }) {
       style={{
         paddingTop: 20,
         flexDirection: "row",
+        justifyContent: "flex-start",
         paddingLeft: 20,
         paddingRight: 20,
       }}
     >
-      <View style={{ flex: 1 }}>
+      <View>
         <TextInput
           style={{ height: 35, borderColor: "gray", borderWidth: 1 }}
           name="cityName"
@@ -20,7 +21,7 @@ export default function SearchCity({ cityName, load, setCityName }) {
           onChangeText={(text) => setCityName(text)}
         />
       </View>
-      <View style={{ flex: 1 }}>
+      <View>
         <Button
           style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
           title="Search"
