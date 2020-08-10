@@ -33,7 +33,7 @@
 - axios vs. fetch - axios is cleaner to use
 - npm install axios
 - make a GET request with cityName and API_KEY
-- keeping secret key in env and importing it using the dotenv lib failed - BUG
+- keeping secret key in env and importing it using the dotenv lib failed - DONE
 
 ### Report - cycle 2
 
@@ -87,9 +87,26 @@
 - TODO Network Status check
 - TODO ERROR if user haven't entered any city name - DONE
 - TODO PICKER for C/F
-- TODO Nav bar
-    - npm install react-native-navbar --save
+- TODO Nav bar - PARTIALLY DONE
+- npm install react-native-navbar --save
 
 ### Report - cycle 5
 
-- ALL DONE
+- ALL PLANNED TASKS ARE DONE
+
+## Cycle 6
+
+1. Publish the app to Expo Store
+2. Planned duration - 30 min
+
+### Notes - cycle 6
+
+- account for expo created
+- npm install -g exp
+- login to expo account in terminal
+- the publish had severe errors, the codumentation pages helped <https://docs.expo.io/distribution/building-standalone-apps/>
+
+### Report - cycle 6
+
+- It's DONE. Yay! You can find the app in expo at the link below
+- <https://expo.io/@mohanprasath/weather-app>
