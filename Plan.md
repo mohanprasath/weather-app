@@ -39,3 +39,18 @@
 
 - env key method has to be figured out
 - PARTIALLY DONE
+
+## Cycle 3
+
+1. Design a text input and a button to search for the weather info of a city
+2. Move the working search box to a component
+3. Also add some decent style to the search component
+4. Planned duration - 30 min
+
+### Notes - Cycle 3
+
+- normal text box with state methods, and a button to do the axios GET call
+
+### Report - cycle 3
+
+- DONE

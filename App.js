@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import SearchCity from "./components/SearchCity";
 
 const axios = require("axios");
 
@@ -17,6 +18,10 @@ export default function App() {
   }, []);
 
   function load() {
+    console.log(
+      cityName,
+      `${API_URL}q=${cityName}&units=${unitSystem}&appid=${api_key}`
+    );
     axios
       .get(`${API_URL}q=${cityName}&units=${unitSystem}&appid=${api_key}`)
       .then(function (response) {
@@ -36,6 +41,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <SearchCity cityName={cityName} load={load} setCityName={setCityName} />
       <Text>
         Hello User, the temperature is {temperature}º
         {unitSystem === "metric" ? "C" : "F"}
