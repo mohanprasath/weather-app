@@ -25,6 +25,7 @@ export default function App() {
   }, []);
 
   function load() {
+    // Fecthes the weather data from Open Weather Map API 
     axios
       .get(
         `${API_URL}q=${cityName}&units=${unitSystem}&appid=${env.WEATHER_API_KEY}`
@@ -41,9 +42,6 @@ export default function App() {
         setWeatherResponseData(null);
         console.log(error);
         setErrorMessage(error);
-      })
-      .then(function () {
-        // always executed
       });
   }
 
