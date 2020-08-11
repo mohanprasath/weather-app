@@ -44,7 +44,6 @@ export default function WeatherInformation({
                 : ""}
             </Text>
           </View>
-          {/* <Text style={styles.otherTextContainer}>{main}</Text> */}
         </View>
       </View>
     );
