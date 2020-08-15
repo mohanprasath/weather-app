@@ -1,61 +1,70 @@
-import React from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
-import { Dimensions, Keyboard } from "react-native";
+import React from 'react';
+import {
+  View,
+  TextInput,
+  Button,
+  StyleSheet,
+  Dimensions,
+  Keyboard,
+} from 'react-native';
+
+const screenWidth = Dimensions.get('window').width;
+
+const styles = StyleSheet.create({
+  searchCityInput: {
+    height: 35,
+    width: screenWidth * 0.6,
+    borderColor: 'gray',
+    borderWidth: 1,
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  searchButton: {
+    height: 40,
+    width: screenWidth * 0.3,
+    borderColor: 'gray',
+    borderWidth: 1,
+  },
+  searchView: {
+    paddingTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+});
 
 export default function SearchCity({ cityName, load, setCityName }) {
-  let screenWidth = Dimensions.get("window").width;
-  console.ignoredYellowBox = ["Warning: Failed propType: SceneView"];
+  // console.ignoredYellowBox = ['Warning: Failed propType: SceneView'];
 
-  function cityCheck(event) {
+  const cityCheck = () => {
     Keyboard.dismiss();
     if (cityName) {
       load();
     } else {
-      alert("Enter a City Name!.");
+      alert('Enter a City Name!.');
     }
-  }
+  };
 
   return (
-    <View
-      style={{
-        paddingTop: 20,
-        flexDirection: "row",
-        justifyContent: "flex-start",
-        paddingLeft: 20,
-        paddingRight: 20,
-      }}
-    >
+    <View style={styles.searchView}>
       <View>
         <TextInput
-          style={{
-            height: 35,
-            width: screenWidth * 0.6,
-            borderColor: "gray",
-            borderWidth: 1,
-            fontSize: 20,
-            textAlign: "center",
-          }}
+          style={styles.searchCityInput}
           name="cityName"
           value={cityName}
           placeholder="City"
-          onChangeText={(text) => setCityName(text)}
+          onChangeText={setCityName}
         />
       </View>
       <View>
         <Button
-          style={{
-            height: 40,
-            width: screenWidth * 0.3,
-            borderColor: "gray",
-            borderWidth: 1,
-          }}
+          style={styles.searchButton}
           title="Search"
           onPress={cityCheck}
           text="Search"
-        ></Button>
+        />
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({});

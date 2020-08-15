@@ -110,3 +110,23 @@
 
 - It's DONE. Yay! You can find the app in expo at the link below
 - <https://expo.io/@mohanprasath/weather-app>
+
+## Cycle 7
+
+1. Bug Fixes and restructuring
+2. Planned duration - 45 min
+
+### Notes - cycle 7
+
+- styles clean up in SearchCity component
+- enabling eslint code to github
+- npm install eslint --save-dev
+- eslint --init
+- eslint PropTypes fix TODO
+
+### Report - cycle 7
+
+- Restructuring PARTIALLY COMPLETED
+- Page re rendering Bug fixed
+- TODO Test Page Re rendering fix
+- servies to a separate file TODO
