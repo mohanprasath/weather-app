@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar, Text } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import NavigationBar from 'react-native-navbar';
@@ -30,7 +30,6 @@ export default function App() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [unitSystem, setUnitSystem] = useState('metric');
   const APP_NAME = 'WEATHER INFO';
-
   console.disableYellowBox = true;
 
   function load() {
@@ -41,6 +40,7 @@ export default function App() {
       )
       .then((response) => {
         // handle success
+        console.log(response.data);
         setErrorMessage('Loading Weather Data...');
         setWeatherResponseData(response.data);
         setErrorMessage(null);
@@ -49,7 +49,9 @@ export default function App() {
       .catch((error) => {
         // handle error
         setWeatherResponseData(null);
+        alert('Check the City name!');
         setErrorMessage(error);
+        setCityName('');
       });
   }
 

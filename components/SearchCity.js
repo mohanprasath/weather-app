@@ -34,7 +34,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function SearchCity({ cityName, load, setCityName }) {
+export default function SearchCity({
+  cityName, load, setCityName,
+}) {
   // console.ignoredYellowBox = ['Warning: Failed propType: SceneView'];
 
   const cityCheck = () => {

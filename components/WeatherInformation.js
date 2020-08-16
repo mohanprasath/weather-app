@@ -35,7 +35,8 @@ export default function WeatherInformation({
 }) {
   if (weatherResponseData) {
     const {
-      main: { temp, feelsLike, humidity },
+      main: { temp, feels_like, humidity },
+      sys: { country },
       weather: [details],
       wind: { speed },
       name,
@@ -45,7 +46,7 @@ export default function WeatherInformation({
     // console.log(iconUrl);
     return (
       <View>
-        <Text style={styles.cityText}>{name}</Text>
+        <Text style={styles.cityText}>{`${name}, ${country}`}</Text>
         <View style={{ flexDirection: 'column' }}>
           <Image style={styles.imageContainer} source={{ uri: iconUrl }} />
           <Text style={styles.otherTextContainer}>
@@ -56,8 +57,8 @@ export default function WeatherInformation({
           <Text style={styles.otherTextContainer}>{description}</Text>
           <View style={styles.padTopContainer}>
             <Text style={styles.moreInfoContainer}>
-              {feelsLike
-                ? `Feels Like ${feelsLike}º${
+              {feels_like
+                ? `Feels Like ${feels_like}º${
                   unitSystem === 'metric' ? 'C' : 'F'
                 }`
                 : ''}

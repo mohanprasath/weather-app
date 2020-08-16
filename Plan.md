@@ -130,3 +130,22 @@
 - Page re rendering Bug fixed
 - TODO Test Page Re rendering fix
 - servies to a separate file TODO
+
+## Cycle 8
+
+- Fix No Error Display Bug
+- Fix service issue - BUG FIX
+- planned duration 60 min
+
+### Notes - cycle 8
+
+- Handling axios response for error took a while
+- settled with just an alert on city name error TO IMPROVE
+- Added country code near the city name
+- Service moved to App.js due to an error TO IMPROVE
+- Hidden bug fixed, Feels_like was missing due to auto correct variable names FIXED
+- App automatically published to the market Expo 
+
+### Report - cycle 8
+
+- DONE
