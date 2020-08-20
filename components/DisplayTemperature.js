@@ -1,32 +1,44 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 
-export default function DisplayTemperature({
+const DisplayTemperature = ({
   styles, text, temperature, unitSystem,
-}) {
+}) => {
   if (text !== '' && text !== undefined) {
     return (
       <View>
         <Text style={styles}>
           {temperature
-            ? `${text}${temperature}º${
-              unitSystem === 'metric' ? 'C' : 'F'
-            }`
+            ? `${text}${temperature}º${unitSystem === 'metric' ? 'C' : 'F'}`
             : ''}
         </Text>
       </View>
     );
-  }else{
+  }
   return (
     <View>
       <Text style={styles}>
         {temperature
-          ? `${temperature}º${
-            unitSystem === 'metric' ? 'C' : 'F'
-          }`
+          ? `${temperature}º${unitSystem === 'metric' ? 'C' : 'F'}`
           : ''}
       </Text>
     </View>
   );
-}
-}
+};
+
+DisplayTemperature.propTypes = {
+  styles: PropTypes.string,
+  text: PropTypes.string,
+  temperature: PropTypes.number,
+  unitSystem: PropTypes.string,
+};
+
+DisplayTemperature.defaultProps = {
+  styles: '',
+  text: '',
+  temperature: 0,
+  unitSystem: '',
+};
+
+export default DisplayTemperature;

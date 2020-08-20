@@ -127,7 +127,7 @@
 ### Report - cycle 7
 
 - Restructuring PARTIALLY COMPLETED
-- Page re rendering Bug fixed
+- Page re rendering Bug FIXED
 - TODO Test Page Re rendering fix
 - servies to a separate file TODO
 
@@ -144,8 +144,22 @@
 - Added country code near the city name
 - Service moved to App.js due to an error TO IMPROVE
 - Hidden bug fixed, Feels_like was missing due to auto correct variable names FIXED
-- App automatically published to the market Expo 
+- App automatically published to the market Expo
 
 ### Report - cycle 8
 
 - DONE
+
+## Cycle 9
+
+- use eslint
+- planned suration - 30 min
+
+### Notes - cycle 9
+
+- added prop types, checked for code formatting and styling issues
+
+### Report - cycle 9
+
+- some eslint error are TO BE FIXED, temporrarily they are suppressed
+- FIX the shape prop type and the find a way to

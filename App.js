@@ -1,7 +1,10 @@
-import { StatusBar, Text } from 'expo-status-bar';
+/* eslint-disable react/style-prop-object */
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
+import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-import NavigationBar from 'react-native-navbar';
+// import NavigationBar from 'react-native-navbar';
 import SearchCity from './components/SearchCity';
 import WeatherInformation from './components/WeatherInformation';
 import env from './env';
@@ -29,7 +32,7 @@ export default function App() {
   const [weatherResponseData, setWeatherResponseData] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [unitSystem, setUnitSystem] = useState('metric');
-  const APP_NAME = 'WEATHER INFO';
+  // const APP_NAME = 'WEATHER INFO';
   console.disableYellowBox = true;
 
   function load() {
@@ -40,7 +43,7 @@ export default function App() {
       )
       .then((response) => {
         // handle success
-        console.log(response.data);
+        // console.log(response.data);
         setErrorMessage('Loading Weather Data...');
         setWeatherResponseData(response.data);
         setErrorMessage(null);
@@ -57,12 +60,12 @@ export default function App() {
 
   useEffect(() => {
     load();
+    // console.log('Inside useEffect');
     return () => {};
   }, []);
 
   return (
     <View style={styles.container}>
-      <NavigationBar title={APP_NAME} />
       <SearchCity cityName={cityName} load={load} setCityName={setCityName} />
       <WeatherInformation
         style={styles.weatherInfo}

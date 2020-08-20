@@ -1,8 +1,9 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import {
   View, Text, Image, StyleSheet,
 } from 'react-native';
-import DisplayTemperature from './DisplayTemperature';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   cityText: {
@@ -28,11 +29,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function WeatherInformation({
-  weatherResponseData,
-  unitSystem,
-  errorMessage,
-}) {
+function WeatherInformation({ weatherResponseData, unitSystem, errorMessage }) {
   if (weatherResponseData) {
     const {
       main: { temp, feels_like, humidity },
@@ -83,3 +80,17 @@ export default function WeatherInformation({
   }
   return <View />;
 }
+
+WeatherInformation.propTypes = {
+  weatherResponseData: PropTypes.string,
+  unitSystem: PropTypes.string,
+  errorMessage: PropTypes.string,
+};
+
+WeatherInformation.defaultProps = {
+  weatherResponseData: null,
+  unitSystem: '',
+  errorMessage: '',
+};
+
+export default WeatherInformation;

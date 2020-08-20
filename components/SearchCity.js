@@ -7,6 +7,7 @@ import {
   Dimensions,
   Keyboard,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -34,9 +35,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function SearchCity({
-  cityName, load, setCityName,
-}) {
+function SearchCity({ cityName, load, setCityName }) {
   // console.ignoredYellowBox = ['Warning: Failed propType: SceneView'];
 
   const cityCheck = () => {
@@ -70,3 +69,17 @@ export default function SearchCity({
     </View>
   );
 }
+
+SearchCity.propTypes = {
+  cityName: PropTypes.string,
+  load: PropTypes.func,
+  setCityName: PropTypes.func,
+};
+
+SearchCity.defaultProps = {
+  cityName: '',
+  load: null,
+  setCityName: null,
+};
+
+export default SearchCity;
