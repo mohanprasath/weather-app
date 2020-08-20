@@ -1,6 +1,7 @@
 # weather-app
 
 This react native application is designed to find the weather of a city using API calls.
+Application is published in Expo <https://expo.io/@mohanprasath/weather-app>
 
 ## Software Requirements
 
