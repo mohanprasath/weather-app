@@ -36,6 +36,9 @@ export default function App() {
   console.disableYellowBox = true;
 
   function load() {
+    if (cityName === '') {
+      alert('Check the City name!');
+    }
     // Fecthes the weather data from Open Weather Map API
     axios
       .get(
@@ -52,8 +55,8 @@ export default function App() {
       .catch((error) => {
         // handle error
         setWeatherResponseData(null);
-        alert('Check the City name!');
-        setErrorMessage(error);
+        // alert('Check the City name!');
+        setErrorMessage('Data Load Error!');
         setCityName('');
       });
   }
