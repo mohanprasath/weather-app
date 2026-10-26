@@ -29,7 +29,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function WeatherInformation({ weatherResponseData, unitSystem, errorMessage }) {
+function WeatherInformation({
+  weatherResponseData = null,
+  unitSystem = '',
+  errorMessage = '',
+}) {
   if (weatherResponseData) {
     const {
       main: { temp, feels_like, humidity },
@@ -82,15 +86,9 @@ function WeatherInformation({ weatherResponseData, unitSystem, errorMessage }) {
 }
 
 WeatherInformation.propTypes = {
-  weatherResponseData: PropTypes.string,
+  weatherResponseData: PropTypes.shape({}),
   unitSystem: PropTypes.string,
   errorMessage: PropTypes.string,
-};
-
-WeatherInformation.defaultProps = {
-  weatherResponseData: null,
-  unitSystem: '',
-  errorMessage: '',
 };
 
 export default WeatherInformation;

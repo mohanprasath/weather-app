@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function SearchCity({ cityName, load, setCityName }) {
+function SearchCity({ cityName = '', load = null, setCityName = null }) {
   // console.ignoredYellowBox = ['Warning: Failed propType: SceneView'];
 
   const cityCheck = () => {
@@ -74,12 +74,6 @@ SearchCity.propTypes = {
   cityName: PropTypes.string,
   load: PropTypes.func,
   setCityName: PropTypes.func,
-};
-
-SearchCity.defaultProps = {
-  cityName: '',
-  load: null,
-  setCityName: null,
 };
 
 export default SearchCity;
