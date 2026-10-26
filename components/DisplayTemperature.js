@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 const DisplayTemperature = ({
-  styles, text, temperature, unitSystem,
+  styles = '', text = '', temperature = 0, unitSystem = '',
 }) => {
   if (text !== '' && text !== undefined) {
     return (
@@ -32,13 +32,6 @@ DisplayTemperature.propTypes = {
   text: PropTypes.string,
   temperature: PropTypes.number,
   unitSystem: PropTypes.string,
-};
-
-DisplayTemperature.defaultProps = {
-  styles: '',
-  text: '',
-  temperature: 0,
-  unitSystem: '',
 };
 
 export default DisplayTemperature;

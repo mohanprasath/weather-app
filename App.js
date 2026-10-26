@@ -4,12 +4,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-// import NavigationBar from 'react-native-navbar';
+import axios from 'axios';
 import SearchCity from './components/SearchCity';
 import WeatherInformation from './components/WeatherInformation';
-import env from './env';
-
-const axios = require('axios');
 
 const styles = StyleSheet.create({
   container: {
@@ -26,14 +23,16 @@ const styles = StyleSheet.create({
   },
 });
 
+// Set EXPO_PUBLIC_WEATHER_API_KEY in a local .env file (see README).
+const WEATHER_API_KEY = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
+
 export default function App() {
   const [cityName, setCityName] = useState('helsinki');
-  const API_URL = 'http://api.openweathermap.org/data/2.5/weather?';
+  const API_URL = 'https://api.openweathermap.org/data/2.5/weather?';
   const [weatherResponseData, setWeatherResponseData] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [unitSystem, setUnitSystem] = useState('metric');
   // const APP_NAME = 'WEATHER INFO';
-  console.disableYellowBox = true;
 
   function load() {
     if (cityName === '') {
@@ -42,7 +41,7 @@ export default function App() {
     // Fecthes the weather data from Open Weather Map API
     axios
       .get(
-        `${API_URL}q=${cityName}&units=${unitSystem}&appid=${env.WEATHER_API_KEY}`,
+        `${API_URL}q=${cityName}&units=${unitSystem}&appid=${WEATHER_API_KEY}`,
       )
       .then((response) => {
         // handle success
@@ -52,7 +51,7 @@ export default function App() {
         setErrorMessage(null);
         setCityName('');
       })
-      .catch((error) => {
+      .catch(() => {
         // handle error
         setWeatherResponseData(null);
         // alert('Check the City name!');
